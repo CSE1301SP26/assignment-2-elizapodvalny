@@ -23,23 +23,31 @@ public static void main(String[] args) {
         int sticksTakenR;
 
         while(numSticks > 0) {
-                System.out.println("How many sticks would you like to take?");
+                System.out.println("Choose 1 or 2 sticks");
                 sticksTakenH = scan.nextInt();
-                        if ((sticksTakenH < numSticks) && sticksTakenH <3) {
+                        if ((sticksTakenH < numSticks) && sticksTakenH <3 && sticksTakenH > 0) {
                                 numSticks = numSticks - sticksTakenH;
-                                System.out.println("Sticks left: " + numSticks);
-                        }
-                        while (numSticks >3) {
-                                System.out.println("Please choose a number between 0 and 2");
-                        }
+                                System.out.println("Sticks left: " + numSticks);     
                 sticksTakenR = (int)(Math.random() * 2 + 1);
+                if (numSticks == 1) {
+                        sticksTakenR = 1;
+                }
+                else {
+                      sticksTakenR = (int)(Math.random() * 2 + 1);  
+                }
                 System.out.println("Robot took " + sticksTakenR);
                 numSticks = numSticks - sticksTakenR;
                 System.out.println("Sticks left: " + numSticks);  
+        }       
+                else {
+                        System.out.println("Please choose 1 or 2 sticks");
+                }
         }
+        }
+}
 
-}
-}
+
+
        // int pizzaSlices, numPeople, slicesPerPerson, leftoverSlices;
         // Scanner scan = new Scanner(System.in);
        //  pizzaSlices = scan.nextInt();
